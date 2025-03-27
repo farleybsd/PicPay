@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Apresentation", "1.Apresentation", "{52FC10A1-2649-4132-AC76-3C6EA9EEEB10}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Application", "2.Application", "{1C890CDC-3407-4AAD-87E7-9080DE41F297}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Domain", "3.Domain", "{D4EB8FFA-646B-4B7A-B58A-ACE6FA142073}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.DomainCore", "4.DomainCore", "{CD591E89-B970-4377-8E8F-C386EA5998D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.Service", "5.Service", "{C37927F5-0A60-4534-98E0-2A5F2C6E0184}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6.Infrastructure", "6.Infrastructure", "{7181C5CE-0890-430C-866B-6554C69D6A71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicPay.Simplificado.Api", "src\PicPay.Simplificado.Api\PicPay.Simplificado.Api.csproj", "{2018B924-60D5-4ADD-9C24-C799CB89F8F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2018B924-60D5-4ADD-9C24-C799CB89F8F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2018B924-60D5-4ADD-9C24-C799CB89F8F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2018B924-60D5-4ADD-9C24-C799CB89F8F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2018B924-60D5-4ADD-9C24-C799CB89F8F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2018B924-60D5-4ADD-9C24-C799CB89F8F1} = {52FC10A1-2649-4132-AC76-3C6EA9EEEB10}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E2E7C487-C0CA-4AD2-A037-5E3EBE035023}
+	EndGlobalSection
+EndGlobal
