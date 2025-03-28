@@ -45,6 +45,16 @@
                         .HasColumnName("Saldo")
                         .IsRequired();
             });
+
+            // Mapping do StatusUsuario 
+            builder.Property(p => p.StatusUsuario)
+                   .HasConversion<string>()
+                   .IsRequired();
+
+            // Mapping do TipoUsuario 
+            builder.Property(p => p.UsuarioCategoria)
+                   .HasConversion<string>()
+                   .IsRequired();
         }
     }
 }
