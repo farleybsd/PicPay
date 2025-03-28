@@ -1,4 +1,6 @@
-﻿namespace PicPay.Simplificado.Infrastructure.Extensions.Ioc;
+﻿using PicPay.Simplificado.Infrastructure.Data.UOfWork;
+
+namespace PicPay.Simplificado.Infrastructure.Extensions.Ioc;
 
 public static class ServicesCollectionExtensions
 {
@@ -10,6 +12,15 @@ public static class ServicesCollectionExtensions
             options.UseSqlServer(connectionString)
         );
 
+        return services;
+    }
+
+    public static IServiceCollection AddRepository(this IServiceCollection services)
+    {
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddScoped<ITransfereneciaRepositorio, TransferenciaRepositorio>();
+        services.AddScoped<IUsuarioComunRepositorio, UsuarioComunRepositorio>();
+        services.AddScoped<IUsuarioLojistaRepositorio, UsuarioLojistaRepositorio>();
         return services;
     }
 }

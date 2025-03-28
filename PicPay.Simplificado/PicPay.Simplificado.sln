@@ -15,17 +15,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.Service", "5.Service", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6.Infrastructure", "6.Infrastructure", "{7181C5CE-0890-430C-866B-6554C69D6A71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicPay.Simplificado.Api", "src\PicPay.Simplificado.Api\PicPay.Simplificado.Api.csproj", "{2018B924-60D5-4ADD-9C24-C799CB89F8F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PicPay.Simplificado.Api", "src\PicPay.Simplificado.Api\PicPay.Simplificado.Api.csproj", "{2018B924-60D5-4ADD-9C24-C799CB89F8F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicPay.Simplificado.Application", "src\PicPay.Simplificado.Application\PicPay.Simplificado.Application.csproj", "{3604E732-D517-41D4-92C7-7188577C0C77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PicPay.Simplificado.Application", "src\PicPay.Simplificado.Application\PicPay.Simplificado.Application.csproj", "{3604E732-D517-41D4-92C7-7188577C0C77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicPay.Simplificado.Domain", "src\PicPay.Simplificado.Domain\PicPay.Simplificado.Domain.csproj", "{631FFB52-A383-4550-8F5A-94E5C17D0F2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PicPay.Simplificado.Domain", "src\PicPay.Simplificado.Domain\PicPay.Simplificado.Domain.csproj", "{631FFB52-A383-4550-8F5A-94E5C17D0F2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicPay.Simplificado.Domain.Core", "src\PicPay.Simplificado.Domain.Core\PicPay.Simplificado.Domain.Core.csproj", "{48DCBC3E-F473-401A-8C26-707C1ACB3A2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PicPay.Simplificado.Domain.Core", "src\PicPay.Simplificado.Domain.Core\PicPay.Simplificado.Domain.Core.csproj", "{48DCBC3E-F473-401A-8C26-707C1ACB3A2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicPay.Simplificado.Service", "src\PicPay.Simplificado.Service\PicPay.Simplificado.Service.csproj", "{BE2D1447-CAEE-4F50-A3BD-CAEEFAD4F192}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PicPay.Simplificado.Service", "src\PicPay.Simplificado.Service\PicPay.Simplificado.Service.csproj", "{BE2D1447-CAEE-4F50-A3BD-CAEEFAD4F192}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicPay.Simplificado.Infrastructure", "src\PicPay.Simplificado.Infrastructure\PicPay.Simplificado.Infrastructure.csproj", "{85DC45ED-143C-4D15-89EA-0D03B4F5C15F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PicPay.Simplificado.Infrastructure", "src\PicPay.Simplificado.Infrastructure\PicPay.Simplificado.Infrastructure.csproj", "{85DC45ED-143C-4D15-89EA-0D03B4F5C15F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

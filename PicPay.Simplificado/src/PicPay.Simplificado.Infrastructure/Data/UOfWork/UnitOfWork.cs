@@ -1,8 +1,12 @@
-﻿namespace PicPay.Simplificado.Infrastructure.Data.UOfWork;
+﻿
+using Microsoft.EntityFrameworkCore.Storage;
+
+namespace PicPay.Simplificado.Infrastructure.Data.UOfWork;
 
 public class UnitOfWork : IUnitOfWork
 {
     private readonly PicPaySimplificadoContext _context;
+    private IDbContextTransaction _transaction;
 
     public UnitOfWork(PicPaySimplificadoContext context)
     {
@@ -38,5 +42,22 @@ public class UnitOfWork : IUnitOfWork
     public void Dispose()
     {
         _context.Dispose();
+    }
+
+    public async Task BeginTransactionAsync()
+    {
+        _transaction = await _context.Database.BeginTransactionAsync();
+    }
+
+    public async Task CommitTransactionAsync()
+    {
+        await _transaction.CommitAsync();
+        await _transaction.DisposeAsync();
+    }
+
+    public async Task RollbackTransactionAsync()
+    {
+        await _transaction.RollbackAsync();
+        await _transaction.DisposeAsync();
     }
 }
