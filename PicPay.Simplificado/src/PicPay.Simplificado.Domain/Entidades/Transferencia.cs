@@ -2,8 +2,10 @@
 
 public class Transferencia : TransferenciaBase
 {
+    public int UsuarioOrigemId { get; set; }
     public TransacaoOrigem TransferenciaOrigem { get; private set; }
     public TransacaoDestino TransferenciaDestino { get; private set; }
+    public int UsuarioDestinoId { get; set; }
     public FormasPagamento TipoPagamento { get; init; } = FormasPagamento.Dinheiro;
     public TransferenciaSaldo TransferenciaSaldo { get; private set; }
 
