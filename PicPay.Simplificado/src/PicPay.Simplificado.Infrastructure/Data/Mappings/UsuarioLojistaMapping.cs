@@ -1,8 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using PicPay.Simplificado.Domain.Entidades;
-
-namespace PicPay.Simplificado.Infrastructure.Data.Mappings
+﻿namespace PicPay.Simplificado.Infrastructure.Data.Mappings
 {
     public class UsuarioLojistaMapping : IEntityTypeConfiguration<UsuarioLojista>
     {

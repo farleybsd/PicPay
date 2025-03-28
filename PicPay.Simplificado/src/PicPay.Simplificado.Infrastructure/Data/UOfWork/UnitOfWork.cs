@@ -1,13 +1,8 @@
-﻿using PicPay.Simplificado.Domain.Core.Interfaces.Repositories;
-using PicPay.Simplificado.Domain.Core.Interfaces.UnitOfWork;
-using PicPay.Simplificado.Infrastructure.Data.Context;
-using PicPay.Simplificado.Infrastructure.Data.Repositories;
+﻿namespace PicPay.Simplificado.Infrastructure.Data.UOfWork;
 
-namespace PicPay.Simplificado.Infrastructure.Data.UOfWork;
 public class UnitOfWork : IUnitOfWork
 {
     private readonly PicPaySimplificadoContext _context;
-
 
     public UnitOfWork(PicPaySimplificadoContext context)
     {
@@ -15,19 +10,22 @@ public class UnitOfWork : IUnitOfWork
     }
 
     private IUsuarioComunRepositorio _usuarioComunRepositorio;
+
     public IUsuarioComunRepositorio UsuarioComunRepositorio
     {
         get => _usuarioComunRepositorio ?? (_usuarioComunRepositorio = new UsuarioComunRepositorio(_context));
     }
 
     private IUsuarioLojistaRepositorio _usuarioLojistaRepositorio;
+
     public IUsuarioLojistaRepositorio UsuarioLojistaRepositorio
     {
         get => _usuarioLojistaRepositorio ?? (_usuarioLojistaRepositorio = new UsuarioLojistaRepositorio(_context));
     }
 
     private ITransfereneciaRepositorio _transfereneciaRepositorio;
-    public ITransfereneciaRepositorio TransfereneciaRepositorio 
+
+    public ITransfereneciaRepositorio TransfereneciaRepositorio
     {
         get => _transfereneciaRepositorio ?? (_transfereneciaRepositorio = new TransferenciaRepositorio(_context));
     }

@@ -1,8 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using PicPay.Simplificado.Domain.Entidades;
-using System.Reflection;
-
-namespace PicPay.Simplificado.Infrastructure.Data.Context;
+﻿namespace PicPay.Simplificado.Infrastructure.Data.Context;
 
 public class PicPaySimplificadoContext : DbContext
 {
@@ -12,7 +8,6 @@ public class PicPaySimplificadoContext : DbContext
 
     public PicPaySimplificadoContext(DbContextOptions<PicPaySimplificadoContext> options) : base(options)
     {
-
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
