@@ -1,6 +1,4 @@
-﻿using PicPay.Simplificado.Domain.Core.Interfaces.Repositories;
-
-namespace PicPay.Simplificado.Domain.Core.Interfaces.UnitOfWork;
+﻿namespace PicPay.Simplificado.Domain.Core.Interfaces.UnitOfWork;
 
 public interface IUnitOfWork
 {

@@ -1,6 +1,4 @@
-﻿using System.Linq.Expressions;
-
-namespace PicPay.Simplificado.Domain.Core.Interfaces.Base;
+﻿namespace PicPay.Simplificado.Domain.Core.Interfaces.Base;
 
 public interface IGenericRepository<T> where T : class
 {
