@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PicPay.Simplificado.Domain.Core\PicPay.Simplificado.Domain.Core.csproj" />
+  </ItemGroup>
+
 </Project>

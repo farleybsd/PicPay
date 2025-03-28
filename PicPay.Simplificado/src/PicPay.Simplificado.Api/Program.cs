@@ -10,6 +10,8 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 // Registrar o DbContext com a connection string
 builder.Services.AddSqlServerDb(builder.Configuration);
+builder.Services.AddRepository();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

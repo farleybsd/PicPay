@@ -12,3 +12,4 @@ global using PicPay.Simplificado.Infrastructure.Data.Repositories;
 global using PicPay.Simplificado.Infrastructure.Data.Repositories.Base;
 global using System.Linq.Expressions;
 global using System.Reflection;
+global using Microsoft.EntityFrameworkCore.Storage;

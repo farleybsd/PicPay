@@ -1,0 +1,13 @@
+﻿namespace PicPay.Simplificado.Domain.Core.Interfaces.Commands.Result;
+
+public class CommandResult
+{
+    public bool Success { get; }
+    public string Message { get; set; }
+
+    public CommandResult(bool success, string message)
+    {
+        Success = success;
+        Message = message;
+    }
+}
