@@ -1,7 +1,9 @@
 ﻿using PicPay.Simplificado.Application.Handler;
+using PicPay.Simplificado.Application.Handler.Queries.UsuarioComum;
 using PicPay.Simplificado.Application.Mapper;
 using PicPay.Simplificado.Application.Mapper.Interface;
 using PicPay.Simplificado.Domain.Core.Interfaces.Commands;
+using PicPay.Simplificado.Domain.Core.Interfaces.Queries.Interfaces;
 using PicPay.Simplificado.Infrastructure.Data.UOfWork;
 
 namespace PicPay.Simplificado.Infrastructure.Extensions.Ioc;
@@ -31,6 +33,7 @@ public static class ServicesCollectionExtensions
     public static IServiceCollection AddCommand(this IServiceCollection services)
     {
         services.AddTransient<IUsuarioComunCommandHandler, UsuarioComunCommandHandler>();
+        services.AddTransient<IQueryUsuarioComunAsync, QueryUsuarioComunAsync>();
         return services;
     }
 

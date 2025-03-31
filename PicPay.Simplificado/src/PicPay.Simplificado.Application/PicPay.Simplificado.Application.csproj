@@ -10,4 +10,8 @@
     <ProjectReference Include="..\PicPay.Simplificado.Domain.Core\PicPay.Simplificado.Domain.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Response\UsuarioComum\Queris\" />
+  </ItemGroup>
+
 </Project>

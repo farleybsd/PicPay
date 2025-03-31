@@ -3,6 +3,7 @@ using PicPay.Simplificado.Application.Mapper.Interface;
 using PicPay.Simplificado.Application.Request.UsuarioComum.Create;
 using PicPay.Simplificado.Application.Response.UsuarioComum.Create;
 using PicPay.Simplificado.Domain.Core.Interfaces.Commands;
+using PicPay.Simplificado.Domain.Core.Interfaces.Queries.Interfaces;
 
 namespace PicPay.Simplificado.Api.EndpointHandlers;
 public static class UsuarioComumHandlers
@@ -31,6 +32,21 @@ public static class UsuarioComumHandlers
         routeName: "GetUsuarioComum",
         routeValues: new { cpf = response.Cpf },
         value: response);
-
     }
+
+
+    public static async Task<IResult> GetUsuarioComumAsync(string cpf,
+     [FromServices] IQueryUsuarioComunAsync queryUsuarioComunAsync)
+    {
+        var result = await queryUsuarioComunAsync.SearchCommonUserByCpf(cpf);
+
+        if (!result.Success)
+            return TypedResults.BadRequest(result.Message);
+
+        if (result.Data == null)
+            return TypedResults.NotFound("Usuário Comum não encontrado.");
+
+        return TypedResults.Ok(result.Data);
+    }
+
 }
