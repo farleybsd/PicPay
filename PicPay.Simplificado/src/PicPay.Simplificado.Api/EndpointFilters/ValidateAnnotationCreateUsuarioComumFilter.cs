@@ -1,0 +1,18 @@
+﻿using PicPay.Simplificado.Api.Validators;
+using PicPay.Simplificado.Application.Request.UsuarioComum.Create;
+
+namespace PicPay.Simplificado.Api.EndpointFilters;
+public class ValidateAnnotationCreateUsuarioComumFilter : IEndpointFilter
+{
+    public async ValueTask<object?> InvokeAsync(EndpointFilterInvocationContext context, EndpointFilterDelegate next)
+    {
+        var dto = context.GetArgument<UsuarioComumCreateRequest>(0);
+
+        if (!SimpleValidator.TryValidate(dto, out var validationErrors))
+        {
+            return TypedResults.ValidationProblem(validationErrors);
+        }
+
+        return await next(context);
+    }
+}

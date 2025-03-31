@@ -9,9 +9,10 @@ public static class EndpointRouteBuilderExtensions
     {
         var usuarioComum = endpointRouteBuilder.MapGroup("/UsuarioComum");
 
-        usuarioComum.MapPost("", UsuarioComumHandlers.CreateUsuarioComumAsync)
-                    .WithSummary("Criar um novo Usuário Comum")
-                    .WithDescription("Cadastra um novo usuário comum no sistema, validando unicidade de CPF e e-mail.");
+         usuarioComum.MapPost("", UsuarioComumHandlers.CreateUsuarioComumAsync)
+                     .WithSummary("Criar um novo Usuário Comum")
+                     .WithDescription("Cadastra um novo usuário comum no sistema, validando unicidade de CPF e e-mail.")
+                     .AddEndpointFilter<ValidateAnnotationCreateUsuarioComumFilter>(); ;
 
 
         endpointRouteBuilder.MapGet("/{cpf}", UsuarioComumHandlers.GetUsuarioComumAsync)
