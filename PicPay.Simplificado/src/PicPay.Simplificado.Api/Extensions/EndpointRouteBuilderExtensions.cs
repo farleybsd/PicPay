@@ -1,4 +1,5 @@
-﻿using PicPay.Simplificado.Api.EndpointHandlers;
+﻿using PicPay.Simplificado.Api.EndpointFilters;
+using PicPay.Simplificado.Api.EndpointHandlers;
 
 namespace PicPay.Simplificado.Api.Extensions;
 
@@ -14,9 +15,10 @@ public static class EndpointRouteBuilderExtensions
 
 
         endpointRouteBuilder.MapGet("/{cpf}", UsuarioComumHandlers.GetUsuarioComumAsync)
-             .WithName("GetUsuarioComum")
-            .WithSummary("Buscar usuário comum")
-            .WithDescription("Busca um usuário comum cadastrado no sistema filtrando pelo CPF.");
+                            .WithName("GetUsuarioComum")
+                            .WithSummary("Buscar usuário comum")
+                            .WithDescription("Busca um usuário comum cadastrado no sistema filtrando pelo CPF.")
+                            .AddEndpointFilter<CpfFormatValidationFilter>();
 
 
 
