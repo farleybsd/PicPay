@@ -7,6 +7,7 @@ namespace PicPay.Simplificado.Application.Handler;
 public class UsuarioComunCommandHandler : IUsuarioComunCommandHandler
 {
     private readonly IUnitOfWork _uow;
+    private const double SALDO_INICIAL = 1000.00;
     public UsuarioComunCommandHandler(IUnitOfWork uow)
     {
         _uow = uow;
@@ -22,7 +23,8 @@ public class UsuarioComunCommandHandler : IUsuarioComunCommandHandler
                                          .setUsuarioNome(new Nome(command.NomeCompleto))
                                          .setUsuarioCpf(new DocCPF(command.Cpf))
                                          .setUsuarioEmail(new DocEmail(command.Email))
-                                         .setUsuarioSaldo(new Carteira(0))
+                                         .setUsuarioSaldo(new Carteira(SALDO_INICIAL))
+                                         .setUsuarioPassword(command.Senha)
                                          .Build();
 
             await _uow.UsuarioComunRepositorio.AddAsync(usuarioComum);

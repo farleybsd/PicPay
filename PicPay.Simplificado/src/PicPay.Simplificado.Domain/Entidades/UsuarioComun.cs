@@ -7,6 +7,7 @@ public class UsuarioComun : UsuarioBase
     public DocEmail UsuarioEmail { get; private set; }
     public Carteira UsuarioSaldo { get; private set; }
     public TipoUsuario UsuarioCategoria { get; init; } = TipoUsuario.UsuarioComun;
+    public Password UsuarioPassword { get; private set; }
     public bool TemSaldo => UsuarioSaldo.Saldo > 0;
 
     public UsuarioComun()
@@ -42,6 +43,12 @@ public class UsuarioComun : UsuarioBase
         public Builder setUsuarioSaldo(Carteira carteira)
         {
             _usuarioComun.UsuarioSaldo = carteira;
+            return this;
+        }
+
+        public Builder setUsuarioPassword(string Password)
+        {
+            _usuarioComun.UsuarioPassword = new Password(Password);
             return this;
         }
 
