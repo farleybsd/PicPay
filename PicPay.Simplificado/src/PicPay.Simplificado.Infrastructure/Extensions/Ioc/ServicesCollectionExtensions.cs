@@ -1,8 +1,10 @@
 ﻿using PicPay.Simplificado.Application.Handler;
+using PicPay.Simplificado.Application.Handler.Command.UsuarioLojistas;
 using PicPay.Simplificado.Application.Handler.Queries.UsuarioComum;
 using PicPay.Simplificado.Application.Mapper;
 using PicPay.Simplificado.Application.Mapper.Interface;
 using PicPay.Simplificado.Domain.Core.Interfaces.Commands;
+using PicPay.Simplificado.Domain.Core.Interfaces.Commands.UsuarrioLojistas;
 using PicPay.Simplificado.Domain.Core.Interfaces.Queries.Interfaces;
 using PicPay.Simplificado.Infrastructure.Data.UOfWork;
 
@@ -33,13 +35,16 @@ public static class ServicesCollectionExtensions
     public static IServiceCollection AddCommand(this IServiceCollection services)
     {
         services.AddTransient<IUsuarioComunCommandHandler, UsuarioComunCommandHandler>();
+        services.AddTransient<IUsuarioLojistaCommandHandler, UsuarioLojistaCommandHandler>();
         services.AddTransient<IQueryUsuarioComunAsync, QueryUsuarioComunAsync>();
+        services.AddTransient<IQueryUsuarioLojistaAsync, QueryUsuarioLojistaAsync>();
         return services;
     }
 
     public static IServiceCollection AddMapper(this IServiceCollection services)
     {
         services.AddTransient<IUsuarioComumMapper, UsuarioComumMapper>();
+        services.AddTransient<IUsuarioLojistaMapper, UsuarioLojistaMapper>();
         return services;
     }
 }

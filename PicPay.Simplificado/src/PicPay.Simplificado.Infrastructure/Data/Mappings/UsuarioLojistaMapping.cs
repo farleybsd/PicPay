@@ -55,6 +55,25 @@
             builder.Property(p => p.UsuarioCategoria)
                    .HasConversion<string>()
                    .IsRequired();
+
+            // Mapping do TipoUsuario 
+            builder.Property(p => p.UsuarioCategoria)
+                   .HasConversion<string>()
+                   .IsRequired();
+
+            // Mapping do Password
+            builder.OwnsOne(p => p.UsuarioPassword, password =>
+            {
+                password.Property(pw => pw.PasswordHash)
+                        .HasColumnName("PasswordHash")
+                        .HasMaxLength(500)
+                        .IsRequired();
+
+                password.Property(pw => pw.Salt)
+                        .HasColumnName("Salt")
+                        .HasMaxLength(100)
+                        .IsRequired();
+            });
         }
     }
 }

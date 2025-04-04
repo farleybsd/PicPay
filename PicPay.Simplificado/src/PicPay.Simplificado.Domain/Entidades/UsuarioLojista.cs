@@ -7,7 +7,8 @@ public class UsuarioLojista : UsuarioBase
     public DocEmail UsuarioEmail { get; private set; }
     public Carteira UsuarioSaldo { get; private set; }
     public TipoUsuario UsuarioCategoria { get; init; } = TipoUsuario.UsuarioComun;
-
+    public Password UsuarioPassword { get; private set; }
+    public bool TemSaldo => UsuarioSaldo.Saldo > 0;
     public UsuarioLojista()
     { }
 
@@ -43,7 +44,11 @@ public class UsuarioLojista : UsuarioBase
             _usuarioLojista.UsuarioSaldo = carteira;
             return this;
         }
-
+        public Builder setUsuarioPassword(string Password)
+        {
+            _usuarioLojista.UsuarioPassword = new Password(Password);
+            return this;
+        }
         public UsuarioLojista Build()
         {
             return _usuarioLojista;
