@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿
 
 namespace PicPay.Simplificado.Application.Request.UsuarioComum.Create
 {

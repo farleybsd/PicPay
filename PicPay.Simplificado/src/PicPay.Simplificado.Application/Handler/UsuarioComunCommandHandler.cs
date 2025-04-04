@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using PicPay.Simplificado.Application.Exceptions;
-using PicPay.Simplificado.Application.Response.UsuarioComum.Create;
+﻿
 
 namespace PicPay.Simplificado.Application.Handler;
 

@@ -1,5 +1,4 @@
-﻿using PicPay.Simplificado.Domain.Core.Interfaces.Queries.Interfaces;
-using PicPay.Simplificado.Domain.Core.Interfaces.Queries.Result;
+﻿
 
 namespace PicPay.Simplificado.Application.Handler.Queries.UsuarioComum;
 

@@ -1,8 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using PicPay.Simplificado.Application.Exceptions;
-using PicPay.Simplificado.Application.Response.UsuariosLojistas;
-using PicPay.Simplificado.Domain.Core.Interfaces.Commands.UsuarioLojista;
-using PicPay.Simplificado.Domain.Core.Interfaces.Commands.UsuarrioLojistas;
+﻿
 
 namespace PicPay.Simplificado.Application.Handler.Command.UsuarioLojistas;
 
