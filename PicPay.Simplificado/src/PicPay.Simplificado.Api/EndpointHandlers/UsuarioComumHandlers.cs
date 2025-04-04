@@ -1,9 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using PicPay.Simplificado.Application.Mapper.Interface;
-using PicPay.Simplificado.Application.Request.UsuarioComum.Create;
-using PicPay.Simplificado.Application.Response.UsuarioComum.Create;
-using PicPay.Simplificado.Domain.Core.Interfaces.Commands;
-using PicPay.Simplificado.Domain.Core.Interfaces.Queries.Interfaces;
+﻿
 
 namespace PicPay.Simplificado.Api.EndpointHandlers;
 

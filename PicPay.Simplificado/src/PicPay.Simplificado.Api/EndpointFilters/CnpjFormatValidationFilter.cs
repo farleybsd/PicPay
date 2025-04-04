@@ -1,4 +1,4 @@
-﻿using System.Text.RegularExpressions;
+﻿
 
 namespace PicPay.Simplificado.Api.EndpointFilters;
 

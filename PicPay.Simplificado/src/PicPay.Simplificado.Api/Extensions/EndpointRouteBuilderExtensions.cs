@@ -1,5 +1,4 @@
-﻿using PicPay.Simplificado.Api.EndpointFilters;
-using PicPay.Simplificado.Api.EndpointHandlers;
+﻿
 
 namespace PicPay.Simplificado.Api.Extensions;
 

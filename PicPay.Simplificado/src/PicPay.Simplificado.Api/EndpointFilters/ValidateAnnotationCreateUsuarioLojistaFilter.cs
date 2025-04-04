@@ -1,5 +1,4 @@
-﻿using PicPay.Simplificado.Api.Validators;
-using PicPay.Simplificado.Application.Request.UsuarioComum.Create;
+﻿
 
 namespace PicPay.Simplificado.Api.EndpointFilters;
 

@@ -1,6 +1,4 @@
-using PicPay.Simplificado.Api.Erros;
-using PicPay.Simplificado.Api.Extensions;
-using PicPay.Simplificado.Infrastructure.Extensions.Ioc;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
