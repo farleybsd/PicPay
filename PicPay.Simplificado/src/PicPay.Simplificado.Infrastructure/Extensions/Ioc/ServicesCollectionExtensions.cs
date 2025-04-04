@@ -1,12 +1,4 @@
-﻿using PicPay.Simplificado.Application.Handler;
-using PicPay.Simplificado.Application.Handler.Command.UsuarioLojistas;
-using PicPay.Simplificado.Application.Handler.Queries.UsuarioComum;
-using PicPay.Simplificado.Application.Mapper;
-using PicPay.Simplificado.Application.Mapper.Interface;
-using PicPay.Simplificado.Domain.Core.Interfaces.Commands;
-using PicPay.Simplificado.Domain.Core.Interfaces.Commands.UsuarrioLojistas;
-using PicPay.Simplificado.Domain.Core.Interfaces.Queries.Interfaces;
-using PicPay.Simplificado.Infrastructure.Data.UOfWork;
+﻿
 
 namespace PicPay.Simplificado.Infrastructure.Extensions.Ioc;
 
