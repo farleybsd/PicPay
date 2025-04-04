@@ -15,27 +15,21 @@ public static class EndpointRouteBuilderExtensions
                      .WithDescription("Cadastra um novo usuário comum no sistema, validando unicidade de CPF e e-mail.")
                      .AddEndpointFilter<ValidateAnnotationCreateUsuarioComumFilter>(); ;
 
-
         endpointRouteBuilder.MapGet("/{cpf}", UsuarioComumHandlers.GetUsuarioComumAsync)
                             .WithName("GetUsuarioComum")
                             .WithSummary("Buscar usuário comum")
                             .WithDescription("Busca um usuário comum cadastrado no sistema filtrando pelo CPF.")
                             .AddEndpointFilter<CpfFormatValidationFilter>();
 
-
         usuarioLojista.MapPost("", UsuarioLojistaHandlers.CreateUsuarioLojistaAsync)
                     .WithSummary("Criar um novo Usuário Lojista")
                     .WithDescription("Cadastra um novo usuário Lojista no sistema, validando unicidade de CNPJ e e-mail.")
                     .AddEndpointFilter<ValidateAnnotationCreateUsuarioComumFilter>(); ;
-
 
         usuarioLojista.MapGet("/{Cnpj}", UsuarioLojistaHandlers.GetUsuarioLojistaAsync)
                             .WithName("GetUsuarioLojista")
                             .WithSummary("Buscar usuário comum")
                             .WithDescription("Busca um usuário comum cadastrado no sistema filtrando pelo CNPJ.")
                             .AddEndpointFilter<CnpjFormatValidationFilter>();
-
-
-
     }
 }

@@ -1,7 +1,4 @@
-﻿
-
-
-namespace PicPay.Simplificado.Infrastructure.Data.UOfWork;
+﻿namespace PicPay.Simplificado.Infrastructure.Data.UOfWork;
 
 public class UnitOfWork : IUnitOfWork
 {

@@ -5,15 +5,16 @@ using PicPay.Simplificado.Domain.Core.Interfaces.Commands.UsuarioLojista;
 using PicPay.Simplificado.Domain.Core.Interfaces.Commands.UsuarrioLojistas;
 
 namespace PicPay.Simplificado.Application.Handler.Command.UsuarioLojistas;
+
 public class UsuarioLojistaCommandHandler : IUsuarioLojistaCommandHandler
 {
     private readonly IUnitOfWork _unitOfWork;
     private const double SALDO_INICIAL = 1000.00;
+
     public UsuarioLojistaCommandHandler(IUnitOfWork unitOfWork)
     {
         _unitOfWork = unitOfWork;
     }
-
 
     public async Task<CommandResult> Handler(UsuarioLojistaCreateCommand command)
     {
@@ -60,7 +61,6 @@ public class UsuarioLojistaCommandHandler : IUsuarioLojistaCommandHandler
             // Se for outro erro, rethrow
             throw;
         }
-
         catch (Exception ex)
         {
             await _unitOfWork.RollbackTransactionAsync();

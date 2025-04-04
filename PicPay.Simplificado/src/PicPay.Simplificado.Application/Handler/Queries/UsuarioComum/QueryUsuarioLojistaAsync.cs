@@ -2,6 +2,7 @@
 using PicPay.Simplificado.Domain.Core.Interfaces.Queries.Result;
 
 namespace PicPay.Simplificado.Application.Handler.Queries.UsuarioComum;
+
 public class QueryUsuarioLojistaAsync : IQueryUsuarioLojistaAsync
 {
     private readonly IUnitOfWork _uow;
@@ -10,6 +11,7 @@ public class QueryUsuarioLojistaAsync : IQueryUsuarioLojistaAsync
     {
         _uow = uow;
     }
+
     public async Task<QueryResult<UsuarioLojistaSearchByCnpjResponse>> SearchLojistaUserByCnpj(string cnpj)
     {
         try

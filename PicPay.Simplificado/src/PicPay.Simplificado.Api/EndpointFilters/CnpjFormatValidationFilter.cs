@@ -1,6 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 
 namespace PicPay.Simplificado.Api.EndpointFilters;
+
 public class CnpjFormatValidationFilter : IEndpointFilter
 {
     public async ValueTask<object?> InvokeAsync(EndpointFilterInvocationContext context, EndpointFilterDelegate next)

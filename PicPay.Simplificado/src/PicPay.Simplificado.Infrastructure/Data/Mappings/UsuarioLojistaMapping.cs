@@ -46,17 +46,17 @@
                         .IsRequired();
             });
 
-            // Mapping do StatusUsuario 
+            // Mapping do StatusUsuario
             builder.Property(p => p.StatusUsuario)
                    .HasConversion<string>()
                    .IsRequired();
 
-            // Mapping do TipoUsuario 
+            // Mapping do TipoUsuario
             builder.Property(p => p.UsuarioCategoria)
                    .HasConversion<string>()
                    .IsRequired();
 
-            // Mapping do TipoUsuario 
+            // Mapping do TipoUsuario
             builder.Property(p => p.UsuarioCategoria)
                    .HasConversion<string>()
                    .IsRequired();

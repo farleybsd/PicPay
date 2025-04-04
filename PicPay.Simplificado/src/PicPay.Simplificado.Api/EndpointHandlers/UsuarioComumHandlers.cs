@@ -6,6 +6,7 @@ using PicPay.Simplificado.Domain.Core.Interfaces.Commands;
 using PicPay.Simplificado.Domain.Core.Interfaces.Queries.Interfaces;
 
 namespace PicPay.Simplificado.Api.EndpointHandlers;
+
 public static class UsuarioComumHandlers
 {
     public static async Task<IResult> CreateUsuarioComumAsync(
@@ -34,7 +35,6 @@ public static class UsuarioComumHandlers
         value: response);
     }
 
-
     public static async Task<IResult> GetUsuarioComumAsync(string cpf,
      [FromServices] IQueryUsuarioComunAsync queryUsuarioComunAsync)
     {
@@ -48,5 +48,4 @@ public static class UsuarioComumHandlers
 
         return TypedResults.Ok(result.Data);
     }
-
 }

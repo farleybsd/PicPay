@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
 namespace PicPay.Simplificado.Api.Validators;
+
 public static class SimpleValidator
 {
     public static bool TryValidate(object obj, out Dictionary<string, string[]> errors)
@@ -25,4 +26,3 @@ public static class SimpleValidator
         return isValid;
     }
 }
-

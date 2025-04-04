@@ -1,4 +1,5 @@
 ﻿namespace PicPay.Simplificado.Infrastructure.Data.Mappings;
+
 public class TransferenciaMapping : IEntityTypeConfiguration<Transferencia>
 {
     public void Configure(EntityTypeBuilder<Transferencia> builder)
@@ -33,7 +34,7 @@ public class TransferenciaMapping : IEntityTypeConfiguration<Transferencia>
 
         // Campo Enum
         builder.Property(t => t.TipoPagamento)
-               .HasConversion<string>() 
+               .HasConversion<string>()
                .IsRequired();
     }
 }

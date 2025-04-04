@@ -13,7 +13,8 @@ public class Password
         PasswordHash = HashPassword(plainPassword, Salt);
     }
 
-    private Password() { } // Necessário para o EF Core
+    private Password()
+    { } // Necessário para o EF Core
 
     private string GenerateSalt()
     {
@@ -35,4 +36,3 @@ public class Password
         return hashToCheck == PasswordHash;
     }
 }
-

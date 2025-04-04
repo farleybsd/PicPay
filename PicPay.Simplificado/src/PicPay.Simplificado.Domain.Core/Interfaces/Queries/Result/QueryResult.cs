@@ -1,4 +1,5 @@
 ﻿namespace PicPay.Simplificado.Domain.Core.Interfaces.Queries.Result;
+
 public class QueryResult<T>
 {
     public bool Success { get; }
@@ -11,4 +12,3 @@ public class QueryResult<T>
         Message = message;
     }
 }
-

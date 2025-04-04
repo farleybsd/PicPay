@@ -1,4 +1,5 @@
 ﻿namespace PicPay.Simplificado.Application.Response.UsuarioComum.Create;
+
 public class UsuarioComumCreateResponse
 {
     public string NomeCompleto { get; set; }

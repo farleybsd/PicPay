@@ -2,6 +2,7 @@
 using PicPay.Simplificado.Domain.Core.Interfaces.Queries.Result;
 
 namespace PicPay.Simplificado.Application.Handler.Queries.UsuarioComum;
+
 public class QueryUsuarioComunAsync : IQueryUsuarioComunAsync
 {
     private readonly IUnitOfWork _uow;
@@ -37,5 +38,4 @@ public class QueryUsuarioComunAsync : IQueryUsuarioComunAsync
             return new QueryResult<UsuarioComumSearchByCpfResponse>(false, $"Erro ao recuperar usuário: {ex.Message}");
         }
     }
-
 }

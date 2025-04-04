@@ -2,6 +2,7 @@
 using PicPay.Simplificado.Application.Request.UsuarioComum.Create;
 
 namespace PicPay.Simplificado.Api.EndpointFilters;
+
 public class ValidateAnnotationCreateUsuarioComumFilter : IEndpointFilter
 {
     public async ValueTask<object?> InvokeAsync(EndpointFilterInvocationContext context, EndpointFilterDelegate next)
