@@ -2,3 +2,4 @@
 global using PicPay.Simplificado.Domain.Enum;
 global using PicPay.Simplificado.Domain.Exceptions;
 global using PicPay.Simplificado.Domain.ValueObjects;
+global using System.Security.Cryptography;

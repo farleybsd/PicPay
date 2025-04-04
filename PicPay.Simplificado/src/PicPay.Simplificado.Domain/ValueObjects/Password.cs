@@ -1,4 +1,4 @@
-﻿using System.Security.Cryptography;
+﻿
 
 namespace PicPay.Simplificado.Domain.ValueObjects;
 
