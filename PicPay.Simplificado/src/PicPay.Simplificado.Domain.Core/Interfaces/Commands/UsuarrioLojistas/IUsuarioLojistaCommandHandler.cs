@@ -1,6 +1,4 @@
-﻿
-
-namespace PicPay.Simplificado.Domain.Core.Interfaces.Commands.UsuarrioLojistas;
+﻿namespace PicPay.Simplificado.Domain.Core.Interfaces.Commands.UsuarrioLojistas;
 
 public interface IUsuarioLojistaCommandHandler
 {

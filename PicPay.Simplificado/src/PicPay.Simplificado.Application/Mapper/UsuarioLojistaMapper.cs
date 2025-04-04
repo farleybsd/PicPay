@@ -1,6 +1,4 @@
-﻿
-
-namespace PicPay.Simplificado.Application.Mapper
+﻿namespace PicPay.Simplificado.Application.Mapper
 {
     public class UsuarioLojistaMapper : IUsuarioLojistaMapper
     {

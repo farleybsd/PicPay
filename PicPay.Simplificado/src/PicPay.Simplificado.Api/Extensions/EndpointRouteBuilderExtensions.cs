@@ -1,6 +1,4 @@
-﻿
-
-namespace PicPay.Simplificado.Api.Extensions;
+﻿namespace PicPay.Simplificado.Api.Extensions;
 
 public static class EndpointRouteBuilderExtensions
 {

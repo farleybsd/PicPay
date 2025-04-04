@@ -1,6 +1,4 @@
-﻿
-
-namespace PicPay.Simplificado.Domain.ValueObjects;
+﻿namespace PicPay.Simplificado.Domain.ValueObjects;
 
 public class Password
 {

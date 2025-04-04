@@ -1,7 +1,4 @@
-﻿
-
-
-namespace PicPay.Simplificado.Domain.Core.Interfaces.Commands;
+﻿namespace PicPay.Simplificado.Domain.Core.Interfaces.Commands;
 
 public interface IUsuarioComunCommandHandler
 {

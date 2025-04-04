@@ -1,6 +1,4 @@
-﻿
-
-namespace PicPay.Simplificado.Api.EndpointFilters;
+﻿namespace PicPay.Simplificado.Api.EndpointFilters;
 
 public class CnpjFormatValidationFilter : IEndpointFilter
 {

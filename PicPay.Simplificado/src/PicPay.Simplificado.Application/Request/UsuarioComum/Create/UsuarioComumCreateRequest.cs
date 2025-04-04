@@ -1,6 +1,4 @@
-﻿
-
-namespace PicPay.Simplificado.Application.Request.UsuarioComum.Create
+﻿namespace PicPay.Simplificado.Application.Request.UsuarioComum.Create
 {
     public class UsuarioComumCreateRequest
     {

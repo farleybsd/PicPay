@@ -1,6 +1,4 @@
-﻿
-
-namespace PicPay.Simplificado.Application.Handler.Command.UsuarioLojistas;
+﻿namespace PicPay.Simplificado.Application.Handler.Command.UsuarioLojistas;
 
 public class UsuarioLojistaCommandHandler : IUsuarioLojistaCommandHandler
 {

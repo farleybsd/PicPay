@@ -1,6 +1,4 @@
-﻿
-
-namespace PicPay.Simplificado.Api.Validators;
+﻿namespace PicPay.Simplificado.Api.Validators;
 
 public static class SimpleValidator
 {

@@ -1,6 +1,4 @@
-﻿
-
-namespace PicPay.Simplificado.Infrastructure.Extensions.Ioc;
+﻿namespace PicPay.Simplificado.Infrastructure.Extensions.Ioc;
 
 public static class ServicesCollectionExtensions
 {

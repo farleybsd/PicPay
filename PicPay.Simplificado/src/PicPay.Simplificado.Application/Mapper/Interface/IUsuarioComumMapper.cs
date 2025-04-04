@@ -1,6 +1,4 @@
-﻿
-
-namespace PicPay.Simplificado.Application.Mapper.Interface
+﻿namespace PicPay.Simplificado.Application.Mapper.Interface
 {
     public interface IUsuarioComumMapper
     {

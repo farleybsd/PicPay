@@ -1,6 +1,4 @@
-﻿
-
-namespace PicPay.Simplificado.Api.Erros;
+﻿namespace PicPay.Simplificado.Api.Erros;
 
 public class GlobalExceptionHandler : IExceptionHandler
 {

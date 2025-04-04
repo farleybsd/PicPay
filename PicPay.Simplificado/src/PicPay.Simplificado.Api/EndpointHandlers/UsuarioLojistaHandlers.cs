@@ -1,6 +1,4 @@
-﻿
-
-namespace PicPay.Simplificado.Api.EndpointHandlers;
+﻿namespace PicPay.Simplificado.Api.EndpointHandlers;
 
 public static class UsuarioLojistaHandlers
 {

@@ -1,6 +1,4 @@
-﻿
-
-namespace PicPay.Simplificado.Application.Handler.Queries.UsuarioComum;
+﻿namespace PicPay.Simplificado.Application.Handler.Queries.UsuarioComum;
 
 public class QueryUsuarioComunAsync : IQueryUsuarioComunAsync
 {
