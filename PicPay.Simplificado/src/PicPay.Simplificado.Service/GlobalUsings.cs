@@ -1,0 +1,11 @@
+﻿global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Logging;
+global using Microsoft.Extensions.Options;
+global using PicPay.Simplificado.Service.Handler;
+global using PicPay.Simplificado.Service.Interfaces;
+global using PicPay.Simplificado.Service.Logs;
+global using PicPay.Simplificado.Service.Response;
+global using PicPay.Simplificado.Service.Settings;
+global using PicPay.Simplificado.Service.Validates;
+global using System.Net.Http.Json;

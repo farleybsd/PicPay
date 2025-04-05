@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PicPay.Simplificado.Infrastructure\PicPay.Simplificado.Infrastructure.csproj" />
+    <ProjectReference Include="..\PicPay.Simplificado.Service\PicPay.Simplificado.Service.csproj" />
   </ItemGroup>
 
 </Project>
