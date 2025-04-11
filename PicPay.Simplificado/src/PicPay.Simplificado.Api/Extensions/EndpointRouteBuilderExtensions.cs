@@ -32,7 +32,7 @@ public static class EndpointRouteBuilderExtensions
     }
     public static void RegisterTransferenciaEndpoints(this IEndpointRouteBuilder endpointRouteBuilder)
     {
-        var Transferencia = endpointRouteBuilder.MapGroup("/Transferencia");
+        var Transferencia = endpointRouteBuilder.MapGroup("/TransferenciaUsuarioParaLojista");
         Transferencia.MapPost("", TransferenciaHandler.TransferirAsync)
                      .WithSummary("Servico para transferencia bancarias entre usuarios e lojista")
                      .WithDescription("Obserbavao Lojistas só recebem transferências, não enviam dinheiro para ninguém;")
