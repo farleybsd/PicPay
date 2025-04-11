@@ -7,7 +7,7 @@ public static class ServiceCollectionExtensions
         services.AddTransient<LoggingAuthorizeHandler>();
         services.AddSingleton<IValidateOptions<AuthorizeSettings>, AuthorizeSettingsValidate>();
         services.AddOptionsWithValidateOnStart<AuthorizeSettings>()
-            .Bind(configuration)
+            .Bind(configuration.GetSection("Providers:Authorize"))
             .ValidateDataAnnotations()
             .ValidateOnStart();
 

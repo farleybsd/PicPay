@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PicPay.Simplificado.Domain.Core\PicPay.Simplificado.Domain.Core.csproj" />
+    <ProjectReference Include="..\PicPay.Simplificado.Service\PicPay.Simplificado.Service.csproj" />
   </ItemGroup>
 
   <ItemGroup>

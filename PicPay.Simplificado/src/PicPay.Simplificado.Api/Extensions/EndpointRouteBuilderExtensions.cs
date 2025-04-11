@@ -21,12 +21,21 @@ public static class EndpointRouteBuilderExtensions
         usuarioLojista.MapPost("", UsuarioLojistaHandlers.CreateUsuarioLojistaAsync)
                     .WithSummary("Criar um novo Usuário Lojista")
                     .WithDescription("Cadastra um novo usuário Lojista no sistema, validando unicidade de CNPJ e e-mail.")
-                    .AddEndpointFilter<ValidateAnnotationCreateUsuarioComumFilter>(); ;
+                    .AddEndpointFilter<ValidateAnnotationCreateUsuarioLojistaFilter>(); ;
 
         usuarioLojista.MapGet("/{Cnpj}", UsuarioLojistaHandlers.GetUsuarioLojistaAsync)
                             .WithName("GetUsuarioLojista")
                             .WithSummary("Buscar usuário comum")
                             .WithDescription("Busca um usuário comum cadastrado no sistema filtrando pelo CNPJ.")
                             .AddEndpointFilter<CnpjFormatValidationFilter>();
+        
+    }
+    public static void RegisterTransferenciaEndpoints(this IEndpointRouteBuilder endpointRouteBuilder)
+    {
+        var Transferencia = endpointRouteBuilder.MapGroup("/Transferencia");
+        Transferencia.MapPost("", TransferenciaHandler.TransferirAsync)
+                     .WithSummary("Servico para transferencia bancarias entre usuarios")
+                     .WithDescription("Obserbavao Lojistas só recebem transferências, não enviam dinheiro para ninguém;")
+                     .AddEndpointFilter<ValidateAnnotationTransferenciaFilter>(); ;
     }
 }

@@ -1,11 +1,19 @@
-﻿namespace PicPay.Simplificado.Service.Response;
+﻿using System.Text.Json.Serialization;
 
-public class AuthorizeResponse
+namespace PicPay.Simplificado.Service.Response
 {
-    public string Status { get; set; }
-    public Dados Dados { get; set; }
-}
-public class Dados
-{
-    public bool Autorizacao { get; set; }
+    public class AuthorizeResponse
+    {
+        [JsonPropertyName("status")]
+        public string Status { get; set; }
+
+        [JsonPropertyName("data")]
+        public Dados Dados { get; set; }
+    }
+
+    public class Dados
+    {
+        [JsonPropertyName("authorization")]
+        public bool Autorizacao { get; set; }
+    }
 }

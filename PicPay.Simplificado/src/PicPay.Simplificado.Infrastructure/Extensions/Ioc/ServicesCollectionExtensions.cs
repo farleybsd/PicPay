@@ -1,4 +1,10 @@
-﻿namespace PicPay.Simplificado.Infrastructure.Extensions.Ioc;
+﻿using PicPay.Simplificado.Application.Handler.Transferencia;
+using PicPay.Simplificado.Domain.Core.Interfaces.Commands.Transferencias;
+using PicPay.Simplificado.Domain.Core.Interfaces.Patterns;
+using PicPay.Simplificado.Domain.Core.Interfaces.Validadores;
+using PicPay.Simplificado.Domain.Core.Validadores;
+
+namespace PicPay.Simplificado.Infrastructure.Extensions.Ioc;
 
 public static class ServicesCollectionExtensions
 {
@@ -28,6 +34,7 @@ public static class ServicesCollectionExtensions
         services.AddTransient<IUsuarioLojistaCommandHandler, UsuarioLojistaCommandHandler>();
         services.AddTransient<IQueryUsuarioComunAsync, QueryUsuarioComunAsync>();
         services.AddTransient<IQueryUsuarioLojistaAsync, QueryUsuarioLojistaAsync>();
+        services.AddTransient<ITransferenciaCommandHandler, TransferenciaCommandHandler>();
         return services;
     }
 
@@ -35,6 +42,8 @@ public static class ServicesCollectionExtensions
     {
         services.AddTransient<IUsuarioComumMapper, UsuarioComumMapper>();
         services.AddTransient<IUsuarioLojistaMapper, UsuarioLojistaMapper>();
+        services.AddTransient<ITransferenciaMapper, TransferenciaMapper>();
+        services.AddTransient<ITransferenciaValidator, TransferenciaValidator>();
         return services;
     }
 }

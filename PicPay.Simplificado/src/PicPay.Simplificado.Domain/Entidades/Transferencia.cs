@@ -15,7 +15,6 @@ public class Transferencia : TransferenciaBase
     public class Builder
     {
         private readonly Transferencia _transferencia;
-
         public Builder()
         {
             _transferencia = new Transferencia();
@@ -38,6 +37,18 @@ public class Transferencia : TransferenciaBase
             _transferencia.TransferenciaSaldo = transferenciaSaldo;
             return this;
         }
+        public Builder setUsuarioOrigemId(int usuarioDestinoId) 
+        {
+            _transferencia.UsuarioDestinoId = usuarioDestinoId; 
+            return this;
+        }
+
+        public Builder setTransferenciaDestinoId(int usuarioOrigemId)
+        {
+            _transferencia.UsuarioOrigemId = usuarioOrigemId;
+            return this;
+        }
+
 
         public Transferencia Builde()
         {

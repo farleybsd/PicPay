@@ -22,6 +22,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.RegisterUsuarioComumEndpoints();
+app.RegisterTransferenciaEndpoints();
 app.UseHttpsRedirection();
 
 app.Run();

@@ -6,10 +6,12 @@ public class UsuarioLojista : UsuarioBase
     public DocCnpj UsuarioCnpj { get; set; }
     public DocEmail UsuarioEmail { get; private set; }
     public Carteira UsuarioSaldo { get; private set; }
-    public TipoUsuario UsuarioCategoria { get; init; } = TipoUsuario.UsuarioComun;
+    public TipoUsuario UsuarioCategoria { get; init; } = TipoUsuario.UsuarioLojista;
     public Password UsuarioPassword { get; private set; }
     public bool TemSaldo => UsuarioSaldo.Saldo > 0;
+    public void Debitar(double valor) => UsuarioSaldo.Debitar(valor);
 
+    public void Creditar(double valor) => UsuarioSaldo.Creditar(valor);
     public UsuarioLojista()
     { }
 
