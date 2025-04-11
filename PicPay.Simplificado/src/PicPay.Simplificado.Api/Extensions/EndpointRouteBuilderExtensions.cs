@@ -34,7 +34,7 @@ public static class EndpointRouteBuilderExtensions
     {
         var Transferencia = endpointRouteBuilder.MapGroup("/Transferencia");
         Transferencia.MapPost("", TransferenciaHandler.TransferirAsync)
-                     .WithSummary("Servico para transferencia bancarias entre usuarios")
+                     .WithSummary("Servico para transferencia bancarias entre usuarios e lojista")
                      .WithDescription("Obserbavao Lojistas só recebem transferências, não enviam dinheiro para ninguém;")
                      .AddEndpointFilter<ValidateAnnotationTransferenciaFilter>(); ;
     }
