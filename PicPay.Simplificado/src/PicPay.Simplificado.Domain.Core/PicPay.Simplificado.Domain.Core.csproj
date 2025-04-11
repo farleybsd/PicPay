@@ -10,4 +10,10 @@
     <ProjectReference Include="..\PicPay.Simplificado.Domain\PicPay.Simplificado.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Exeception\" />
+    <Folder Include="Interfaces\Validadores\" />
+    <Folder Include="Validadores\" />
+  </ItemGroup>
+
 </Project>

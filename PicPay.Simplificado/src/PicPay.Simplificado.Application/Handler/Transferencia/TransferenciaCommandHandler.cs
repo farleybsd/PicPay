@@ -2,14 +2,12 @@
 using PicPay.Simplificado.Application.Response.Transacaoes;
 using PicPay.Simplificado.Domain.Core.Interfaces.Commands.Transferencias;
 using PicPay.Simplificado.Domain.Core.Interfaces.Patterns;
-using PicPay.Simplificado.Domain.Core.Interfaces.Validadores;
 using PicPay.Simplificado.Service.Interfaces;
 
 namespace PicPay.Simplificado.Application.Handler.Transferencia;
 public class TransferenciaCommandHandler : ITransferenciaCommandHandler
 {
     private readonly IUnitOfWork _uow;
-    private readonly ITransferenciaValidator transferenciaValidator;
     private readonly IAuthorizeGateway _authorizeGateway;
     private new List<ITransactionCommand> _transaction = new List<ITransactionCommand>();
     private GerenciadorDeTransacoesBancarias _gerenciador;
@@ -41,7 +39,7 @@ public class TransferenciaCommandHandler : ITransferenciaCommandHandler
                 // Realizar Transacao
 
                 var transacao = new PicPay.Simplificado.Domain.Entidades.Transferencia.Builder()
-                    .setTransacaoOrigem(new TransacaoOrigem(usuarioComumpagador.UsuarioNome.NomeCompleto))
+                    .setTransacaoOrigem(new TransacaoOrigem(usuarioComumpagador.UsuarioNome.NomeCompleto), usuarioComumpagador.UsuarioCategoria)
                     .setTransacaoDestino(new TransacaoDestino(usuarioLojistaFavorecido.UsuarioNome.NomeCompleto))
                     .setTransferenciaSaldo(new TransferenciaSaldo((double)command.Valor))
                     .setUsuarioOrigemId(usuarioComumpagador.Id)

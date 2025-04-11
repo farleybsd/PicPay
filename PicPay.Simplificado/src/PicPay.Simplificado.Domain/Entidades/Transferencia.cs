@@ -1,4 +1,6 @@
-﻿namespace PicPay.Simplificado.Domain.Entidades;
+﻿using PicPay.Simplificado.Domain.Enum;
+
+namespace PicPay.Simplificado.Domain.Entidades;
 
 public class Transferencia : TransferenciaBase
 {
@@ -20,8 +22,12 @@ public class Transferencia : TransferenciaBase
             _transferencia = new Transferencia();
         }
 
-        public Builder setTransacaoOrigem(TransacaoOrigem transacaoOrigem)
+        public Builder setTransacaoOrigem(TransacaoOrigem transacaoOrigem, TipoUsuario tipoUsuario)
         {
+            if (tipoUsuario == TipoUsuario.UsuarioLojista)
+            {
+                throw new LojistaTransferenciaException("Lojistas só recebem transferências, não enviam dinheiro.");
+            }
             _transferencia.TransferenciaOrigem = transacaoOrigem;
             return this;
         }
