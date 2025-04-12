@@ -32,6 +32,7 @@ public static class ServicesCollectionExtensions
         services.AddTransient<IQueryUsuarioComunAsync, QueryUsuarioComunAsync>();
         services.AddTransient<IQueryUsuarioLojistaAsync, QueryUsuarioLojistaAsync>();
         services.AddTransient<ITransferenciaCommandHandler, TransferenciaCommandHandler>();
+        services.AddTransient<ITransferenciaEntreUsuariosCommandHandler, TransferenciaEntreUsuariosCommandHandler>();
         return services;
     }
 

@@ -36,6 +36,12 @@ public static class EndpointRouteBuilderExtensions
         Transferencia.MapPost("", TransferenciaHandler.TransferirAsync)
                      .WithSummary("Servico para transferencia bancarias entre usuarios e lojista")
                      .WithDescription("Obserbavao Lojistas só recebem transferências, não enviam dinheiro para ninguém;")
-                     .AddEndpointFilter<ValidateAnnotationTransferenciaFilter>(); ;
+                     .AddEndpointFilter<ValidateAnnotationTransferenciaFilter>(); 
+
+        var TransferenciaUsuarioParaUsuario = endpointRouteBuilder.MapGroup("/TransferenciaUsuarioParaUsuario");
+        TransferenciaUsuarioParaUsuario.MapPost("", TransferenciaHandler.TransferirUsuarioParaUsuarioAsync)
+                     .WithSummary("Servico para transferencia bancarias entre usuarios")
+                     .WithDescription("Obserbavao Lojistas só recebem transferências, não enviam dinheiro para ninguém;")
+                     .AddEndpointFilter<ValidateAnnotationTransferenciaEntreUsuariosFilter>(); ;
     }
 }

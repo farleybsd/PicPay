@@ -7,7 +7,8 @@
         public string NomeCompleto { get; set; }
 
         [Required(ErrorMessage = "O CNPJ é obrigatório.")]
-        [RegularExpression(@"^\d{14}$", ErrorMessage = "O CNPJ deve conter exatamente 14 dígitos numéricos.")]
+        [RegularExpression(@"^(\d{14}|\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2})$",
+            ErrorMessage = "O CNPJ deve estar no formato 00.000.000/0000-00 ou conter exatamente 14 dígitos.")]
         public string CNPJ { get; set; }
 
         [Required(ErrorMessage = "O e-mail é obrigatório.")]

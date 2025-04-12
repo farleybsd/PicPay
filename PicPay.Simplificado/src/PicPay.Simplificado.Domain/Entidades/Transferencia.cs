@@ -45,16 +45,21 @@ public class Transferencia : TransferenciaBase
         }
         public Builder setUsuarioOrigemId(int usuarioDestinoId) 
         {
-            _transferencia.UsuarioDestinoId = usuarioDestinoId; 
+            _transferencia.UsuarioOrigemId = usuarioDestinoId; 
             return this;
         }
 
         public Builder setTransferenciaDestinoId(int usuarioOrigemId)
         {
-            _transferencia.UsuarioOrigemId = usuarioOrigemId;
+            _transferencia.UsuarioDestinoId = usuarioOrigemId;
             return this;
         }
-
+        public Builder setSucessoNaTransferencia(bool SucessoNaTransferencia)
+        {
+            _transferencia.SucessoNaTransferencia = SucessoNaTransferencia;
+            return this;
+        }
+        
 
         public Transferencia Builde()
         {
