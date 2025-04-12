@@ -1,5 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
+﻿
 namespace PicPay.Simplificado.Service.Response
 {
     public class AuthorizeResponse

@@ -9,3 +9,4 @@ global using PicPay.Simplificado.Service.Response;
 global using PicPay.Simplificado.Service.Settings;
 global using PicPay.Simplificado.Service.Validates;
 global using System.Net.Http.Json;
+global using System.Text.Json.Serialization;
