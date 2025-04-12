@@ -1,10 +1,4 @@
-﻿using PicPay.Simplificado.Application.Response.Transacaoes;
-using PicPay.Simplificado.Domain.Core.Interfaces.Commands.Transferencias;
-using PicPay.Simplificado.Domain.Core.Interfaces.Log;
-using PicPay.Simplificado.Domain.Core.Interfaces.Patterns;
-using PicPay.Simplificado.Service.Interfaces;
-
-namespace PicPay.Simplificado.Application.Handler.Transferencia;
+﻿namespace PicPay.Simplificado.Application.Handler.Transferencia;
 
 public class TransferenciaCommandHandler : ITransferenciaCommandHandler
 {
