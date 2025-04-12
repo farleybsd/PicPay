@@ -28,6 +28,9 @@ public class TransferenciaEntreUsuariosCommandHandler : ITransferenciaEntreUsuar
         var usuarioComumpagador = await _uow.UsuarioComunRepositorio.FirstAsync(x => x.Id == command.IdTitular);
         var usuarioComumFavorecido = await _uow.UsuarioComunRepositorio.FirstAsync(x => x.Id == command.IdFavorecido);
 
+        if (usuarioComumpagador is null)
+            return new CommandResult(false, $"Dados inválidos para {command.IdTitular}");
+
         if (usuarioComumpagador.TemSaldo)
         {
 

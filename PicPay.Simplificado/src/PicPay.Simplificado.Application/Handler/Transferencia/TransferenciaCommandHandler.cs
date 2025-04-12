@@ -26,7 +26,15 @@ public class TransferenciaCommandHandler : ITransferenciaCommandHandler
     public async Task<CommandResult> Handler(TransferenciaCreateCommand command)
     {
         var usuarioComumpagador = await _uow.UsuarioComunRepositorio.FirstAsync(x => x.Id == command.IdTitular);
+
         var usuarioLojistaFavorecido = await _uow.UsuarioLojistaRepositorio.FirstAsync(x => x.Id == command.IdFavorecido);
+
+        if (usuarioComumpagador is null)
+            return new CommandResult(false, $"Dados inválidos para {command.IdTitular}");
+
+        if (usuarioLojistaFavorecido is null)
+            return new CommandResult(false, $"Dados inválidos para {command.IdFavorecido}");
+
 
         if (usuarioComumpagador.TemSaldo)
         {
