@@ -16,3 +16,5 @@ global using PicPay.Simplificado.Infrastructure.Extensions.Ioc;
 global using PicPay.Simplificado.Service.Ioc;
 global using System.ComponentModel.DataAnnotations;
 global using System.Text.RegularExpressions;
+global using PicPay.Simplificado.Application.Response.Transacaoes;
+global using PicPay.Simplificado.Domain.Core.Interfaces.Commands.Transferencias;

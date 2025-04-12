@@ -1,7 +1,4 @@
-﻿using PicPay.Simplificado.Application.Response.Transacaoes;
-using PicPay.Simplificado.Domain.Core.Interfaces.Commands.Transferencias;
-
-namespace PicPay.Simplificado.Api.EndpointHandlers;
+﻿namespace PicPay.Simplificado.Api.EndpointHandlers;
 
 public static class TransferenciaHandler
 {
