@@ -1,4 +1,4 @@
-﻿using PicPay.Simplificado.Domain.ValueObjects;
+﻿
 
 namespace PicPay.Simplificado.Domain.Core.Interfaces.Patterns;
 

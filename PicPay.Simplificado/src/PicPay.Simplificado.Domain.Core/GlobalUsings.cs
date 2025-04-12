@@ -5,3 +5,5 @@ global using PicPay.Simplificado.Domain.Core.Interfaces.Commands.UsuarioLojista;
 global using PicPay.Simplificado.Domain.Core.Interfaces.Repositories;
 global using PicPay.Simplificado.Domain.Entidades;
 global using System.Linq.Expressions;
+global using PicPay.Simplificado.Domain.ValueObjects;
+global using PicPay.Simplificado.Domain.Core.Interfaces.Queries.Result;
