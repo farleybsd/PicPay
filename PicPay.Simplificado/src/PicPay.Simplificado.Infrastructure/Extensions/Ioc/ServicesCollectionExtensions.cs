@@ -1,7 +1,4 @@
-﻿using PicPay.Simplificado.Application.Handler.Transferencia;
-using PicPay.Simplificado.Domain.Core.Interfaces.Commands.Transferencias;
-using PicPay.Simplificado.Domain.Core.Interfaces.Log;
-using PicPay.Simplificado.Infrastructure.Logs;
+﻿
 
 namespace PicPay.Simplificado.Infrastructure.Extensions.Ioc;
 

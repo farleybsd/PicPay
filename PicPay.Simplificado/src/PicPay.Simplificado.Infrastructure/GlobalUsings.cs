@@ -22,3 +22,8 @@ global using PicPay.Simplificado.Infrastructure.Data.Repositories.Base;
 global using PicPay.Simplificado.Infrastructure.Data.UOfWork;
 global using System.Linq.Expressions;
 global using System.Reflection;
+global using PicPay.Simplificado.Application.Handler.Transferencia;
+global using PicPay.Simplificado.Domain.Core.Interfaces.Commands.Transferencias;
+global using PicPay.Simplificado.Domain.Core.Interfaces.Log;
+global using PicPay.Simplificado.Infrastructure.Logs;
+global using Microsoft.Extensions.Logging;
