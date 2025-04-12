@@ -1,46 +1,58 @@
-﻿
-using PicPay.Simplificado.Application.Response.Transacaoes;
+﻿using PicPay.Simplificado.Application.Response.Transacaoes;
 using PicPay.Simplificado.Domain.Core.Interfaces.Commands.Transferencias;
 using PicPay.Simplificado.Domain.Core.Interfaces.Patterns;
 using PicPay.Simplificado.Service.Interfaces;
+using PicPay.Simplificado.Domain.Core.Interfaces.Log;
 
 namespace PicPay.Simplificado.Application.Handler.Transferencia;
+
 public class TransferenciaEntreUsuariosCommandHandler : ITransferenciaEntreUsuariosCommandHandler
 {
     private readonly IUnitOfWork _uow;
     private readonly IAuthorizeGateway _authorizeGateway;
-    private new List<ITransactionCommand> _transaction = new List<ITransactionCommand>();
-    private GerenciadorDeTransacoesBancarias _gerenciador;
+    private readonly ILogService<TransferenciaEntreUsuariosCommandHandler> _log;
+    private readonly List<ITransactionCommand> _transaction = new();
+    private readonly GerenciadorDeTransacoesBancarias _gerenciador;
+
     public TransferenciaEntreUsuariosCommandHandler(
-    IUnitOfWork uow,
-    IAuthorizeGateway authorizeGateway,
-    IEnumerable<ITransactionCommand> transactionCommands)
+        IUnitOfWork uow,
+        IAuthorizeGateway authorizeGateway,
+        IEnumerable<ITransactionCommand> transactionCommands,
+        ILogService<TransferenciaEntreUsuariosCommandHandler> log)
     {
         _uow = uow;
         _authorizeGateway = authorizeGateway;
         _transaction = transactionCommands.ToList();
         _gerenciador = new GerenciadorDeTransacoesBancarias(_transaction);
+        _log = log;
     }
-
 
     public async Task<CommandResult> Handler(TransferenciaEntreUsuariosCreateCommand command)
     {
+        _log.Info($"Iniciando transferência do usuário {command.IdTitular} para o usuário {command.IdFavorecido} no valor de {command.Valor}");
+
         var usuarioComumpagador = await _uow.UsuarioComunRepositorio.FirstAsync(x => x.Id == command.IdTitular);
         var usuarioComumFavorecido = await _uow.UsuarioComunRepositorio.FirstAsync(x => x.Id == command.IdFavorecido);
 
         if (usuarioComumpagador is null)
-            return new CommandResult(false, $"Dados inválidos para {command.IdTitular}");
-
-        if (usuarioComumpagador.TemSaldo)
         {
+            _log.Warn($"Usuário pagador {command.IdTitular} não encontrado.");
+            return new CommandResult(false, $"Dados inválidos para {command.IdTitular}");
+        }
 
-            // Autorizador
+        if (!usuarioComumpagador.TemSaldo)
+        {
+            _log.Warn($"Usuário pagador {command.IdTitular} não possui saldo suficiente.");
+            return new CommandResult(false, "Usuario Sem Saldo");
+        }
+
+        try
+        {
             var response = await _authorizeGateway.AutorizarTransracao();
+            _log.Info($"Resposta do autorizador: Status = {response.Status}, Autorização = {response.Dados.Autorizacao}");
 
             if (response.Status.Equals("success") && response.Dados.Autorizacao)
             {
-                // Realizar Transacao
-
                 var transacao = new PicPay.Simplificado.Domain.Entidades.Transferencia.Builder()
                     .setTransacaoOrigem(new TransacaoOrigem(usuarioComumpagador.UsuarioNome.NomeCompleto), usuarioComumpagador.UsuarioCategoria)
                     .setTransacaoDestino(new TransacaoDestino(usuarioComumFavorecido.UsuarioNome.NomeCompleto))
@@ -50,10 +62,10 @@ public class TransferenciaEntreUsuariosCommandHandler : ITransferenciaEntreUsuar
                     .setSucessoNaTransferencia(response.Dados.Autorizacao)
                     .Builde();
 
-                ITransactionCommand Debitar = new DebitarTransaction(usuarioComumpagador.UsuarioSaldo, (double)command.Valor);
-                ITransactionCommand Creditar = new CreditarTransaction(usuarioComumFavorecido.UsuarioSaldo, (double)command.Valor);
-                _gerenciador.ExecutarTransacao(Debitar);
-                _gerenciador.ExecutarTransacao(Creditar);
+                var debitar = new DebitarTransaction(usuarioComumpagador.UsuarioSaldo, (double)command.Valor);
+                var creditar = new CreditarTransaction(usuarioComumFavorecido.UsuarioSaldo, (double)command.Valor);
+                _gerenciador.ExecutarTransacao(debitar);
+                _gerenciador.ExecutarTransacao(creditar);
 
                 await _uow.BeginTransactionAsync();
                 await _uow.TransfereneciaRepositorio.AddAsync(transacao);
@@ -63,6 +75,7 @@ public class TransferenciaEntreUsuariosCommandHandler : ITransferenciaEntreUsuar
                 if (_uow.Commit())
                 {
                     await _uow.CommitTransactionAsync();
+                    _log.Info("Transação realizada com sucesso.");
 
                     var usuarioComumpagadorResponse = await _uow.UsuarioComunRepositorio.FirstAsync(x => x.Id == command.IdTitular);
                     var usuarioComumFavorecidoResponse = await _uow.UsuarioComunRepositorio.FirstAsync(x => x.Id == command.IdFavorecido);
@@ -75,19 +88,26 @@ public class TransferenciaEntreUsuariosCommandHandler : ITransferenciaEntreUsuar
                         SaldoFavorecido = usuarioComumFavorecidoResponse.UsuarioSaldo.Saldo
                     };
 
-                    return new CommandResult(true, "Transacao criado com sucesso", responseTransacao);
+                    return new CommandResult(true, "Transacao criada com sucesso", responseTransacao);
                 }
 
                 await _uow.RollbackTransactionAsync();
-                _gerenciador.DesfazerTransacao(Debitar);
-                _gerenciador.DesfazerTransacao(Creditar);
-                return new CommandResult(false, "Dados inválidos");
-
+                _gerenciador.DesfazerTransacao(debitar);
+                _gerenciador.DesfazerTransacao(creditar);
+                _log.Error("Falha ao salvar transação no banco.");
+                return new CommandResult(false, "Erro ao salvar transação");
+            }
+            else
+            {
+                _log.Warn("Transação não autorizada pelo serviço externo.");
+                return new CommandResult(false, "Transação não autorizada");
             }
         }
-        return new CommandResult(false, "Usuario Sem Saldo");
-
-
+        catch (Exception ex)
+        {
+            _log.Error("Erro inesperado ao processar transferência", ex);
+            await _uow.RollbackTransactionAsync();
+            return new CommandResult(false, "Erro interno ao processar a transferência.");
+        }
     }
-
 }

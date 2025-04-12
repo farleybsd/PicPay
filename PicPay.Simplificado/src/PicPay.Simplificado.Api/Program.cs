@@ -10,6 +10,7 @@ builder.Services.AddMapper();
 builder.Services.AddServicoAutorizacao(builder.Configuration);
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddProblemDetails(); // recomendado
+builder.Logging.AddConsole(); // <-- habilita saída no console
 
 var app = builder.Build();
 app.UseExceptionHandler();
