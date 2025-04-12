@@ -10,6 +10,7 @@
             builder.OwnsOne(p => p.UsuarioNome, nome =>
             {
                 nome.Property(n => n.NomeCompleto)
+                //.HasColumnName("NomeCompleto") // <-- aqui define o nome da coluna No Banco
                     .HasMaxLength(60)
                     .IsRequired();
             });
