@@ -1,4 +1,5 @@
 ﻿namespace PicPay.Simplificado.Domain.Core.Interfaces.Patterns;
+
 public class GerenciadorDeTransacoesBancarias
 {
     private readonly List<ITransactionCommand> _transacao = new List<ITransactionCommand>();

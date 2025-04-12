@@ -1,6 +1,4 @@
-﻿using PicPay.Simplificado.Domain.Enum;
-
-namespace PicPay.Simplificado.Domain.Entidades;
+﻿namespace PicPay.Simplificado.Domain.Entidades;
 
 public class Transferencia : TransferenciaBase
 {
@@ -17,6 +15,7 @@ public class Transferencia : TransferenciaBase
     public class Builder
     {
         private readonly Transferencia _transferencia;
+
         public Builder()
         {
             _transferencia = new Transferencia();
@@ -43,9 +42,10 @@ public class Transferencia : TransferenciaBase
             _transferencia.TransferenciaSaldo = transferenciaSaldo;
             return this;
         }
-        public Builder setUsuarioOrigemId(int usuarioDestinoId) 
+
+        public Builder setUsuarioOrigemId(int usuarioDestinoId)
         {
-            _transferencia.UsuarioOrigemId = usuarioDestinoId; 
+            _transferencia.UsuarioOrigemId = usuarioDestinoId;
             return this;
         }
 
@@ -54,12 +54,12 @@ public class Transferencia : TransferenciaBase
             _transferencia.UsuarioDestinoId = usuarioOrigemId;
             return this;
         }
+
         public Builder setSucessoNaTransferencia(bool SucessoNaTransferencia)
         {
             _transferencia.SucessoNaTransferencia = SucessoNaTransferencia;
             return this;
         }
-        
 
         public Transferencia Builde()
         {

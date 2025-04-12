@@ -1,4 +1,5 @@
 ﻿namespace PicPay.Simplificado.Service.Validates;
+
 public class AuthorizeSettingsValidate : IValidateOptions<AuthorizeSettings>
 {
     public ValidateOptionsResult Validate(string? name, AuthorizeSettings options)

@@ -1,4 +1,5 @@
 ﻿namespace PicPay.Simplificado.Service.Handler;
+
 public class AuthorizeGateway(HttpClient httpClient) : IAuthorizeGateway
 {
     public async Task<AuthorizeResponse> AutorizarTransracao()

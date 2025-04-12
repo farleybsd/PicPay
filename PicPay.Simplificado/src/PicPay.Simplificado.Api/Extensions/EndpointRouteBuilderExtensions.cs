@@ -28,15 +28,15 @@ public static class EndpointRouteBuilderExtensions
                             .WithSummary("Buscar usuário comum")
                             .WithDescription("Busca um usuário comum cadastrado no sistema filtrando pelo CNPJ.")
                             .AddEndpointFilter<CnpjFormatValidationFilter>();
-        
     }
+
     public static void RegisterTransferenciaEndpoints(this IEndpointRouteBuilder endpointRouteBuilder)
     {
         var Transferencia = endpointRouteBuilder.MapGroup("/TransferenciaUsuarioParaLojista");
         Transferencia.MapPost("", TransferenciaHandler.TransferirAsync)
                      .WithSummary("Servico para transferencia bancarias entre usuarios e lojista")
                      .WithDescription("Obserbavao Lojistas só recebem transferências, não enviam dinheiro para ninguém;")
-                     .AddEndpointFilter<ValidateAnnotationTransferenciaFilter>(); 
+                     .AddEndpointFilter<ValidateAnnotationTransferenciaFilter>();
 
         var TransferenciaUsuarioParaUsuario = endpointRouteBuilder.MapGroup("/TransferenciaUsuarioParaUsuario");
         TransferenciaUsuarioParaUsuario.MapPost("", TransferenciaHandler.TransferirUsuarioParaUsuarioAsync)

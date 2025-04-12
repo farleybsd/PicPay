@@ -6,7 +6,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSqlServerDb(builder.Configuration);
 builder.Services.AddRepository();
 builder.Services.AddCommand();
-builder.Services.AddMapper(); 
+builder.Services.AddMapper();
 builder.Services.AddServicoAutorizacao(builder.Configuration);
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddProblemDetails(); // recomendado

@@ -50,5 +50,4 @@ public static class TransferenciaHandler
 
         return TypedResults.Ok(response);
     }
-
 }

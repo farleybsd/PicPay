@@ -1,8 +1,8 @@
 ﻿using PicPay.Simplificado.Application.Response.Transacaoes;
 using PicPay.Simplificado.Domain.Core.Interfaces.Commands.Transferencias;
+using PicPay.Simplificado.Domain.Core.Interfaces.Log;
 using PicPay.Simplificado.Domain.Core.Interfaces.Patterns;
 using PicPay.Simplificado.Service.Interfaces;
-using PicPay.Simplificado.Domain.Core.Interfaces.Log;
 
 namespace PicPay.Simplificado.Application.Handler.Transferencia;
 

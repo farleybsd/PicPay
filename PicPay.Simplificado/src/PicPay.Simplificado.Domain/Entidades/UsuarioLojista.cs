@@ -9,9 +9,11 @@ public class UsuarioLojista : UsuarioBase
     public TipoUsuario UsuarioCategoria { get; init; } = TipoUsuario.UsuarioLojista;
     public Password UsuarioPassword { get; private set; }
     public bool TemSaldo => UsuarioSaldo.Saldo > 0;
+
     public void Debitar(double valor) => UsuarioSaldo.Debitar(valor);
 
     public void Creditar(double valor) => UsuarioSaldo.Creditar(valor);
+
     public UsuarioLojista()
     { }
 
