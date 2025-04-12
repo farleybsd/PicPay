@@ -1,6 +1,4 @@
-﻿
-
-namespace PicPay.Simplificado.Domain.Core.Interfaces.Queries.Interfaces;
+﻿namespace PicPay.Simplificado.Domain.Core.Interfaces.Queries.Interfaces;
 
 public interface IQueryUsuarioComunAsync
 {

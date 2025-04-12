@@ -1,5 +1,4 @@
-﻿
-namespace PicPay.Simplificado.Service.Response
+﻿namespace PicPay.Simplificado.Service.Response
 {
     public class AuthorizeResponse
     {

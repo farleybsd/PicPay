@@ -1,6 +1,4 @@
-﻿
-
-namespace PicPay.Simplificado.Domain.Core.Interfaces.Patterns;
+﻿namespace PicPay.Simplificado.Domain.Core.Interfaces.Patterns;
 
 public class CreditarTransaction : ITransactionCommand
 {
