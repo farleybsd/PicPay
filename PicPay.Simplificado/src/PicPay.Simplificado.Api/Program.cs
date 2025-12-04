@@ -13,6 +13,10 @@ builder.Services.AddProblemDetails(); // recomendado
 builder.Logging.AddConsole(); // <-- habilita saída no console
 
 var app = builder.Build();
+
+// Testar conexão com SQL Server
+TestarConexaoSqlServer.Testar(app.Services);
+// Roda migrations
 MigrationExtensions.ApplyMigrations(app.Services);
 app.UseExceptionHandler();
 
