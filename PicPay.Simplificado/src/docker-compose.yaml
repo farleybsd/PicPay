@@ -3,6 +3,8 @@ services:
     build: 
       context: .
       dockerfile: ./PicPay.Simplificado.Api/Dockerfile
+    networks:
+      - picpay-network
     ports:
       - "4401:80"
     environment:  
@@ -14,6 +16,8 @@ services:
       CONNECT_ON_STARTUP: "true"
   database-webapp:
     image: mcr.microsoft.com/mssql/server:2019-latest
+    networks:
+      - picpay-network
     environment:
       ACCEPT_EULA: "Y"
       SA_PASSWORD: '1q2w3e4r@#$'
@@ -25,6 +29,10 @@ services:
 volumes:
   mssqldata-webapp:
     driver: local
+
+networks:
+  picpay-network:
+    driver: bridge
 
 
 #cd /mnt/c/Git/PicPay/PicPay.Simplificado/src
