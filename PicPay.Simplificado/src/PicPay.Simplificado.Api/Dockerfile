@@ -29,4 +29,5 @@ WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "PicPay.Simplificado.Api.dll"]
 
-# docker build -t picpay.simplificado .
+#cd /mnt/c/Git/PicPay/PicPay.Simplificado/src
+#docker build -f PicPay.Simplificado.Api/Dockerfile -t picpay.simplificado .
