@@ -13,6 +13,7 @@ builder.Services.AddProblemDetails(); // recomendado
 builder.Logging.AddConsole(); // <-- habilita saída no console
 
 var app = builder.Build();
+MigrationExtensions.ApplyMigrations(app.Services);
 app.UseExceptionHandler();
 
 // Configure the HTTP request pipeline.
