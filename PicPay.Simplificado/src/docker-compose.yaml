@@ -1,0 +1,32 @@
+services:
+  webapp:
+    build: 
+      context: .
+      dockerfile: ./PicPay.Simplificado.Api/Dockerfile
+    ports:
+      - "4401:80"
+    environment:  
+      ConnectionStrings__Picpay: 'Server=localhost,1433;Database=Picpay;User ID=sa;Password=1q2w3e4r@#$;Trusted_Connection=False; TrustServerCertificate=True;'
+      Providers__Authorize__BaseAddress: 'https://util.devi.tools/api/v2/authorize'
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: 80
+      CONNECT_ON_STARTUP: "true"
+  database-webapp:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: '1q2w3e4r@#$'
+      MSSQL_PID: "Express"
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssqldata-webapp:/var/opt/mssql
+volumes:
+  mssqldata-webapp:
+    driver: local
+
+
+#cd /mnt/c/Git/PicPay/PicPay.Simplificado/src
+#docker compose up --build -d
+# docker compose down
+# docker compose logs
