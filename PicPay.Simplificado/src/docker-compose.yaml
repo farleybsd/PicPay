@@ -6,9 +6,10 @@ services:
     ports:
       - "4401:80"
     environment:  
-      ConnectionStrings__Picpay: 'Server=localhost,1433;Database=Picpay;User ID=sa;Password=1q2w3e4r@#$;Trusted_Connection=False; TrustServerCertificate=True;'
+      ConnectionStrings__Picpay: 'Server=database-webapp,1433;Database=Picpay;User ID=sa;Password=1q2w3e4r@#$;Trusted_Connection=False;TrustServerCertificate=True;'
       Providers__Authorize__BaseAddress: 'https://util.devi.tools/api/v2/authorize'
       ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: "http://+:80"
       ASPNETCORE_HTTP_PORTS: 80
       CONNECT_ON_STARTUP: "true"
   database-webapp:
